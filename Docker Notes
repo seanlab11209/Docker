@@ -1,0 +1,42 @@
+
+
+docker --version
+
+docker ps 
+docker ps -a
+
+To start a container 
+docker run imagename 
+docker run --name webserver imagename
+example: docker run --name webapp nginx:1.14-alpine
+
+
+
+To Stop a container use 
+docker stop container name or container id 
+
+
+To Remove a container 
+docker rm container name or container id 
+
+Note: You have to stop the contianer first before you can delete it 
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+
+
+To list all images 
+docker images 
+
+To delete an image 
+docker image rm imagename 
+
+To pull (donwload) an image
+docker pull imagename
+example: docker pull nginx:1.14-alpine
+
+
+To delete all images 
+docker rmi imagename:tag
+docker rmi $(docker images -aq)
+
+
